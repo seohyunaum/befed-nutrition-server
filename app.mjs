@@ -10,8 +10,6 @@ const allowedTypes = new Set(["image/jpeg", "image/png", "image/webp"]);
 const validNumber = (value) =>
   typeof value === "number" && Number.isFinite(value) && value >= 0;
 
-// This proxy is intended for local development. Authenticate and rate-limit
-// requests before exposing it on a public server.
 export function createApp({ apiKey, model = "gemini-3.1-flash-lite", fetchImpl = fetch } = {}) {
   const app = express();
   app.use(cors());
